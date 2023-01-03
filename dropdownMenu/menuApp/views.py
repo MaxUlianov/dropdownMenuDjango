@@ -1,9 +1,6 @@
 from django.shortcuts import render
 
 
-def page(request, menus=None, active=None, *args, **kwargs):
-    # query = request.get('menus')
-    query = menus
-    list = request.GET.get('list_menu')
+def page(request, active=None, *args, **kwargs):
 
-    return render(request, 'page.html', {'query': query, 'active': active, 'list': list})
+    return render(request, 'page.html', {'active': active})

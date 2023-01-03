@@ -17,4 +17,4 @@ class MenuItem(models.Model):
     menu = models.ForeignKey(Menu, blank=False, null=True, verbose_name='BelongsToMenu', on_delete=models.DO_NOTHING)
 
     def __str__(self):
-        return self.name
+        return f'{self.name} {self.parent.name if self.parent is not None else None} {self.menu}'
